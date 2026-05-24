@@ -11,6 +11,7 @@ takes input and translate those input that can be understand by kernel.
 User space program or application cannot directly access hardware or manages system resources like file/memory or network management. They need kernel help. So, in kernel there are something called system calls. These system called are used by user space prog or apps to access kernel. Then kernel can perform those system calls operations. 
 System calls: Thesre are the interface for user space to access kernel.It is meachanism through a user space prog or apps request a service from kernel.
 System Libraries: These are pre-written code that user space prog uses to perform tasks like i/o,file management, networking etc.
+System Utilities: All Program and tools exist in user space like ls, cp, grep etc.
 How things flow from user space to hardware:
 Lets take example of simple ls. ( listing)
 Shell --> System Libraries --> System call --> Kernel --> Hardware
@@ -22,3 +23,4 @@ How process are created?
 Process: A running instance of a program. Every process in user space are created from an existing process using two system calls. fork() and exec().
 Kernel creates PID1 as first user space process by running systemd. All sub-sequent process are desendent of systemd.
 Systemd: A initilization process and a aslo program that manages resources as unit. sercice unit .service, file system .mount etc
+
