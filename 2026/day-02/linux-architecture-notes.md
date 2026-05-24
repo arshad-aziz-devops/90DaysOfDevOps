@@ -10,5 +10,9 @@ User Space: This is region where applications run, user intercation happens thro
 takes input and translate those input that can be understand by kernel. 
 User space program or application cannot directly access hardware or manages system resources like file/memory or network management. They need kernel help. So, in kernel there are something called system calls. These system called are used by user space prog or apps to access kernel. Then kernel can perform those system calls operations. 
 System calls: Thesre are the interface for user space to access kernel.It is meachanism through a user space prog or apps request a service from kernel.
-
+System Libraries: These are pre-written code that user space prog uses to perform tasks like i/o,file management, networking etc.
+How things flow from user space to hardware:
+Lets take example of simple ls. ( listing)
+Shell --> System Libraries --> System call --> Kernel --> Hardware
+When you enetr ls in shell, ls is a prog that executes. It thencalls system library (libc- function like opendir(),readdir(),printf())
 
