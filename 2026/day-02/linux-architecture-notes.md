@@ -15,5 +15,5 @@ How things flow from user space to hardware:
 Lets take example of simple ls. ( listing)
 Shell --> System Libraries --> System call --> Kernel --> Hardware
 When you enetr ls in shell, ls is a prog that executes. It then calls system library (glibc). System lib then calls system calls to launch ls as child process
-and to access kernel to read directories. here as system call gets trigger there is chnage Finally kernel executes the tasks and give result back to user space.
+and to access kernel to read directories. Here as system call gets triggered there is chnage of CPU from user mode to kernel mode. Finally kernel executes the tasks and give result back to user space.
 
