@@ -16,4 +16,9 @@ Lets take example of simple ls. ( listing)
 Shell --> System Libraries --> System call --> Kernel --> Hardware
 When you enetr ls in shell, ls is a prog that executes. It then calls system library (glibc). System lib then calls system calls to launch ls as child process
 and to access kernel to read directories. Here as system call gets triggered there is chnage of CPU from user mode to kernel mode. Finally kernel executes the tasks and give result back to user space.
-
+When kernel finishes booting, it starts initialization process in user space. The first process it creates is systemd. It is PID 1. Once systemd up and running then systemd brings up enrire system. So, systemd is program that runs as a process PID 1. It is used to mamager systems and service in the server.
+System Unit : All types of resources that systemd manages are grouped into unit. e.g service unit. socker unit. mount unit etc.
+How process are created?
+Process: A running instance of a program. Every process in user space are created from an existing process using two system calls. fork() and exec().
+Kernel creates PID1 as first user space process by running systemd. All sub-sequent process are desendent of systemd.
+Systemd: A initilization process and a aslo program that manages resources as unit. sercice unit .service, file system .mount etc
