@@ -19,6 +19,7 @@ read -p "Enter the service name" s_name
 read -p "Do you want to check the status? (y/n)" choice
 
 if [ $choice = y ];then
+
         :
 
 elif [ $choice = n ];then
