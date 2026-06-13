@@ -12,7 +12,9 @@ Asks the user: "Do you want to check the status? (y/n)"
 If y — runs systemctl status <service> and prints whether it's active or not
 If n — prints "Skipped."
   #!/bin/bash
+  
   read -p "Enter the service name" s_name
+  
   read -p "Do you want to check the status? (y/n)" choice
   if [ $choice = y ];then
           :
