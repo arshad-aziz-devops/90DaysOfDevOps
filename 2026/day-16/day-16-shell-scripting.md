@@ -22,8 +22,11 @@ if [ $choice = y ];then
         :
 
 elif [ $choice = n ];then
+
         echo "exiting"
+        
         exit 1
+        
 fi
 
 sudo systemctl status $s_name | awk '/Active/ {print $2}'
