@@ -27,3 +27,17 @@ for i in ${services[@]}; do
 
 
 done
+
+#!/bin/bash
+
+services=(nginx curl wget apache2)
+
+for i in ${services[@]}; do
+
+         dpkg -s $i &> /dev/null || { echo "insatlling $i..."; sudo apt install $i -y 1> /dev/null; }
+done
+
+for i in ${services[@]}; do
+
+        dpkg -s $i &> /dev/null && echo " $i is insatlled" || echo "$i is not installed"
+done
